@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FREE MIND FRESHER</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <script src='./validate.js'></script>
+</head>
+
+<body>
+    <div class="container">
+        <form action="https://freemind-test.netlify.app/.netlify/functions/test" method="POST" enctype="multipart/form-data">
+            <h2>FREE MIND</h2>
+            <fieldset class="form-group">
+                <legend class="mb-4">Hãy gửi CV của bạn cho chúng tôi</legend>
+            </fieldset>
+            <div class="inputs-field form-group">
+                <div class="input-group">
+                    <label for="name">Tên của bạn</label>
+                    <input class="form-control" id="name" name="name" placeholder="Phạm Văn A" type="text" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input class="form-control" id="phone" name="phone" onblur="ValidatePhone(this)" placeholder="0123456789" type="text" required>
+                </div>
+                <span class="pr-4" id="phone-error" style="float:right;color:red;"></span>
+                <div class="input-group">
+                    <label for="position">Vị trí ứng tuyển</label>
+                    <input class="form-control" name="position" id="position" placeholder="Fresher Web Developer" type="text" required>
+                </div>
+                <div class="input-group">
+                    <label for="exp">Kinh nghiệm làm việc</label>
+                    <textarea id="exp" name="experience" class="form-control" placeholder="Your's Experience" name="exp" cols="30" rows="10" required></textarea>
+                </div>
+                <div class="input-group file-input">
+                    <input type="file" id="cv" name="cv" accept=".jpeg, .png, .pdf" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" onblur="ValidateEmail(this)" placeholder="sinhvien@gmail.com" name="email" id="email" type="email" required>
+                </div>
+                <span class="pr-4" id="email-error" style="display:block;color:red;width:100%;text-align:center"></span>
+            </div>
+            <div class="container-submit">
+                <button type="submit" class="btn btn-aquaa">Gửi CV cho Free Mind</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
