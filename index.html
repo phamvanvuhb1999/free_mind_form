@@ -37,8 +37,9 @@
                     <textarea id="exp" name="experience" class="form-control" placeholder="Your's Experience" name="exp" cols="30" rows="10" required></textarea>
                 </div>
                 <div class="input-group file-input">
-                    <input type="file" id="cv" name="cv" accept=".jpeg, .png, .pdf" required>
+                    <input type="file"  onblur="ValidateCV(this)" id="cv" name="cv" accept=".jpeg, .png, .pdf" required>
                 </div>
+                <span class="pr-4" id="cv-error" style="display:block;color:red;width:100%;text-align:center"></span>
                 <div class="input-group">
                     <label for="email">Email</label>
                     <input class="form-control" onblur="ValidateEmail(this)" placeholder="sinhvien@gmail.com" name="email" id="email" type="email" required>
